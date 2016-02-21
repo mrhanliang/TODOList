@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:text="@string/task_title"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_background"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        android:padding="5dip"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:text="@string/task_content"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="@drawable/shape_background"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="5dip"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/flGalleryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"  
+        android:clipChildren="false"
+        android:layerType="software"
+        android:orientation="horizontal" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpGallery"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"           
+            android:clipChildren="false" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/btnMarkComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_button"
+            android:drawableRight="@drawable/handdraw_tick"
+            android:gravity="center_vertical"
+            android:padding="5dip"
+            android:text="@string/mark_complete"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnMarkUnComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_button"
+            android:drawableRight="@drawable/handdraw_untick"
+            android:gravity="center_vertical"
+            android:padding="5dip"
+            android:text="@string/mark_uncomplete"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/ibCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/imageview_contentdesc"
+            android:scaleType="fitXY"
+            android:src="@drawable/handdraw_camera" />
+
+        <ImageButton
+            android:id="@+id/ibGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/ibCamera"
+            android:layout_toLeftOf="@+id/ibCamera"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/imageview_contentdesc"
+            android:scaleType="fitXY"
+            android:src="@drawable/handdraw_picture" />
+    </RelativeLayout>
+
+</LinearLayout>
